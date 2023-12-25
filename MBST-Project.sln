@@ -5,6 +5,10 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBST-Project", "MBST-Project\MBST-Project.csproj", "{78DDCCF1-17DD-4675-990D-90EE64EFE694}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseLibrary", "BaseLibrary\BaseLibrary.csproj", "{19EDFAEC-562A-469F-8628-38A9ADB7176B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AUMLReader", "UMLReader\AUMLReader.csproj", "{0FA06975-393D-4435-936E-8701A87C3A78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{78DDCCF1-17DD-4675-990D-90EE64EFE694}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78DDCCF1-17DD-4675-990D-90EE64EFE694}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78DDCCF1-17DD-4675-990D-90EE64EFE694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19EDFAEC-562A-469F-8628-38A9ADB7176B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19EDFAEC-562A-469F-8628-38A9ADB7176B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19EDFAEC-562A-469F-8628-38A9ADB7176B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19EDFAEC-562A-469F-8628-38A9ADB7176B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FA06975-393D-4435-936E-8701A87C3A78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FA06975-393D-4435-936E-8701A87C3A78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FA06975-393D-4435-936E-8701A87C3A78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FA06975-393D-4435-936E-8701A87C3A78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
