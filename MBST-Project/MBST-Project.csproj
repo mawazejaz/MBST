@@ -9,8 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BaseLibrary\BaseLibrary.csproj" />
-    <ProjectReference Include="..\UMLReader\AUMLReader.csproj" />
+    <ProjectReference Include="..\UMLReader\CUMLReader.csproj" />
   </ItemGroup>
 
 </Project>

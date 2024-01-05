@@ -9,25 +9,49 @@ namespace BaseLibrary.MBT
 
 		public UserMBT()
 		{
-			_data = new UserModel();
-			RandomUserWraper randomUserWraper = new RandomUserWraper();
-			var randomuser = randomUserWraper.GetUserAsync().Result.Results.FirstOrDefault();
-			if (randomuser != null)
+			_data = new UserModel()
 			{
-				_data.Id = new Guid();
-				_data.Title = randomuser.Name.Title;
-				_data.FullName = randomuser.Name.First + " " + randomuser.Name.Last;
-				_data.Email = randomuser.Email.ToLower();
-				_data.Address1 = randomuser.Location.Street + "" + randomuser.Location.State;
-				_data.City = randomuser.Location.City;
-				_data.Country = randomuser.Location.Country;
-
-			}
+				Email = "nabeeloutsourcenz1@gmail.com",
+				Password = "password",
+			};
 		}
 
 		public UserModel CreateData()
 		{
 			return _data;
+		}
+		public async Task<string> Login()
+		{
+			EndPointCall endPointCall = new EndPointCall();
+			string apiUrl = ApisSettings.baseUrl+ ApisSettings.versionUrl+ ApisSettings.loginUrl;
+			string token = string.Empty;
+			// Set the payload
+			var payload = new
+			{
+				email = "nabeeloutsourcenz1@gmail.com",
+				password = "Nabeel@123"
+			};
+
+			try
+			{
+				// Call the Login method to authenticate user
+				 token = await endPointCall.CallEndPoint(apiUrl, payload);
+
+				if (!string.IsNullOrEmpty(token))
+				{
+					Console.WriteLine("Login successful Token");
+				}
+				else
+				{
+					Console.WriteLine("Login failed.");
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("Error: " + ex.Message);
+			}
+
+			return token;
 		}
 	}
 }

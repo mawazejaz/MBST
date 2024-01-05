@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UMLReader;
-using System.Xml;
+﻿using System.Xml;
 using System.Xml.Linq;
-using PlantUml.Net;
-
+using StateMachine;
 namespace AUMLReader
 {
 	public class XMLReader
@@ -37,20 +30,20 @@ namespace AUMLReader
 			//reader.Close();
 		}
 
-		public void writefile()
+		public async void writefile()
 		{
 			// Load the UML XML document
 			XmlDocument xmlDoc = new XmlDocument();
-			xmlDoc.Load(@"C:\\Users\\Mawaz\\Downloads\\Statediagram.drawio.xml");
+			xmlDoc.Load(@"C:\\Users\\Mawaz\\Downloads\\Statediagram111.drawio.xml");
 
 			XmlNodeList edgeNodes = xmlDoc.SelectNodes("//mxCell[@edge='1']");
 
 			Dictionary<string, List<string>> stateTransitions = new Dictionary<string, List<string>>();
-
+			StateMachineModel machine = new StateMachineModel();
 			foreach (XmlNode edgeNode in edgeNodes)
 			{
-				string sourceVertexId = edgeNode.Attributes["source"].Value;
-				string targetVertexId = edgeNode.Attributes["target"].Value;
+				string sourceVertexId = edgeNode.Attributes["source"]?.Value;
+				string targetVertexId = edgeNode.Attributes["target"]?.Value;
 
 				// Assuming vertices have 'Activity' as their value
 				string sourceVertexValue = xmlDoc.SelectSingleNode($"//*[@id='{sourceVertexId}']/@value")?.Value;
@@ -60,7 +53,15 @@ namespace AUMLReader
 				string transitionLabel = edgeNode.SelectSingleNode("mxGeometry/@label")?.Value ?? "No Label";
 
 				// Print or process the extracted information
-				Console.WriteLine($"Transition from {sourceVertexValue} to {targetVertexValue} with label '{transitionLabel}'");
+				//Console.WriteLine($"Transition from {sourceVertexValue} to {targetVertexValue} with label '{transitionLabel}'");
+				
+				Console.WriteLine($"Transition from {sourceVertexValue} to {targetVertexValue}'");
+				await machine.ProcessTransition(sourceVertexValue, targetVertexValue);
+
+
+
+
+
 			}
 		}
 	}

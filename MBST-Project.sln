@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBST-Project", "MBST-Projec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseLibrary", "BaseLibrary\BaseLibrary.csproj", "{19EDFAEC-562A-469F-8628-38A9ADB7176B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AUMLReader", "UMLReader\AUMLReader.csproj", "{0FA06975-393D-4435-936E-8701A87C3A78}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CUMLReader", "UMLReader\CUMLReader.csproj", "{0FA06975-393D-4435-936E-8701A87C3A78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
